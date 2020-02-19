@@ -1,9 +1,13 @@
 import React,{useState} from "react";
-import NavBar from "../components/NavBar/index";
+import NavBar from "../components/NavBar";
+import Map from "../components/Map"
 
 const Home = () => {
     return (
-        <NavBar />
+        <div>
+            <NavBar />
+            <Map />
+        </div>
     )
 }
 
