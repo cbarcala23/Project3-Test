@@ -15,11 +15,12 @@ import setAuthToken from "../utils/setAuthToken";
 
 // Load User
 export const loadUser = () => async dispatch => {
-  if (localStorage.token) {
-    setAuthToken(localStorage.token);
-  }
+  // if (localStorage.token) {
+  //   setAuthToken(localStorage.token);
+  // }
 
   try {
+    const axios = setAuthToken(localStorage.token);
     const res = await axios.get("/api/auth");
 
     dispatch({
@@ -44,6 +45,7 @@ export const register = ({ name, email, password }) => async dispatch => {
   const body = JSON.stringify({ name, email, password });
 
   try {
+    const axios = setAuthToken(localStorage.token);
     const res = await axios.post("/api/users", body, config);
     dispatch({
       type: REGISTER_SUCCESS,
@@ -75,6 +77,7 @@ export const login = ({ email, password }) => async dispatch => {
   const body = JSON.stringify({ email, password });
 
   try {
+    const axios = setAuthToken(localStorage.token);
     const res = await axios.post('/api/auth', body, config);
 
     dispatch({
