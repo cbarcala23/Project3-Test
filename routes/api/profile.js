@@ -34,10 +34,10 @@ router.post(
   [
     auth,
     [
-      check("status", "Status is required")
+      check("bio", "Bio is required")
         .not()
         .isEmpty(),
-      check("skills", "Skills is required")
+      check("hobbies", "Hobbies are required")
         .not()
         .isEmpty()
     ]
@@ -49,13 +49,13 @@ router.post(
     }
 
     const {
-      company,
-      website,
+      languages,
+      hometown,
       location,
       bio,
-      status,
-      githubusername,
-      skills,
+      gender,
+      // githubusername,
+      hobbies,
       youtube,
       facebook,
       twitter,
@@ -66,17 +66,23 @@ router.post(
     // Build profile object
     const profileFields = {};
     profileFields.user = req.user.id;
-    if (company) profileFields.company = company;
-    if (website) profileFields.website = website;
+    // if (languages) profileFields.languages = languages;
+    if (hometown) profileFields.hometown = hometown;
     if (location) profileFields.location = location;
     if (bio) profileFields.bio = bio;
-    if (status) profileFields.status = status;
-    if (githubusername) profileFields.githubusername = githubusername;
+    if (gender) profileFields.gender = gender;
+    // if (githubusername) profileFields.githubusername = githubusername;
     // if (skills) {
     //   profileFields.skills = skills.split(",").map(skill => skill.trim());
     // }
-    if (skills) {
-      profileFields.skills = skills
+    if (hobbies) {
+      profileFields.hobbies = hobbies
+        .toString()
+        .split(",")
+        .map(skill => skill.trim());
+    };
+    if (languages) {
+      profileFields.languages = languages
         .toString()
         .split(",")
         .map(skill => skill.trim());
@@ -197,7 +203,7 @@ router.put(
     // destructuring
     const {
       title,
-      company,
+      languages,
       location,
       from,
       to,
@@ -207,7 +213,7 @@ router.put(
 
     const newExp = {
       title,
-      company,
+      languages,
       location,
       from,
       to,

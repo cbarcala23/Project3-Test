@@ -6,12 +6,12 @@ import { connect } from "react-redux";
 import { createProfile, getCurrentProfile } from "../../actions/profile";
 
 const initialState = {
-  company: "",
-  website: "",
+  languages: "",
+  hometown: "",
   location: "",
-  status: "",
-  skills: "",
-  githubusername: "",
+  gender: "",
+  hobbies: "",
+  // githubusername: "",
   bio: "",
   twitter: "",
   facebook: "",
@@ -66,12 +66,12 @@ const EditProfile = ({
   }, [loading, getCurrentProfile, profile]);
 
   const {
-    company,
-    website,
+    languages,
+    hometown,
     location,
-    status,
-    skills,
-    githubusername,
+    gender,
+    hobbies,
+    // githubusername,
     bio,
     twitter,
     facebook,
@@ -95,46 +95,41 @@ const EditProfile = ({
         <i className="fas fa-user"></i> Let's get some information to make your
         profile stand out
       </p>
-      <small>* = required field</small>
+      <small><span className="text-danger">*</span> = required field</small>
       <form className="form" onSubmit={e => onSubmit(e)}>
         <div className="form-group">
-          <select name="status" value={status} onChange={e => onChange(e)}>
-            <option value="0">* Select Professional Status</option>
-            <option value="Developer">Developer</option>
-            <option value="Junior Developer">Junior Developer</option>
-            <option value="Senior Developer">Senior Developer</option>
-            <option value="Manager">Manager</option>
-            <option value="Student or Learning">Student or Learning</option>
-            <option value="Instructor">Instructor or Teacher</option>
-            <option value="Intern">Intern</option>
+          <select name="gender" value={gender} onChange={e => onChange(e)}>
+            <option value="0">Select Gender</option>
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
             <option value="Other">Other</option>
           </select>
           <small className="form-text">
-            Give us an idea of where you are at in your career
+            Unicorns and snowflakes welome
           </small>
         </div>
         <div className="form-group">
           <input
             type="text"
-            placeholder="Company"
-            name="company"
-            value={company}
+            placeholder="Languages"
+            name="languages"
+            value={languages}
             onChange={e => onChange(e)}
           />
           <small className="form-text">
-            Could be your own company or one you work for
+          Please use comma separated values (eg. English,Korean,Spanish)
           </small>
         </div>
         <div className="form-group">
           <input
             type="text"
-            placeholder="Website"
-            name="website"
-            value={website}
+            placeholder="Hometown"
+            name="hometown"
+            value={hometown}
             onChange={e => onChange(e)}
           />
           <small className="form-text">
-            Could be your own or a company website
+          City & state suggested (eg. Boston, MA)
           </small>
         </div>
         <div className="form-group">
@@ -146,22 +141,22 @@ const EditProfile = ({
             onChange={e => onChange(e)}
           />
           <small className="form-text">
-            City & state suggested (eg. Boston, MA)
+          Eg. Capitol Hill
           </small>
         </div>
         <div className="form-group">
           <input
             type="text"
-            placeholder="* Skills"
-            name="skills"
-            value={skills}
+            placeholder="* Hobbies"
+            name="hobbies"
+            value={hobbies}
             onChange={e => onChange(e)}
           />
           <small className="form-text">
-            Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)
+            Please use comma separated values (eg. Hiking,Swimming,Sleeping,Eating)
           </small>
         </div>
-        <div className="form-group">
+        {/* <div className="form-group">
           <input
             type="text"
             placeholder="Github Username"
@@ -173,10 +168,10 @@ const EditProfile = ({
             If you want your latest repos and a Github link, include your
             username
           </small>
-        </div>
+        </div> */}
         <div className="form-group">
           <textarea
-            placeholder="A short bio of yourself"
+            placeholder="* A short bio of yourself"
             name="bio"
             value={bio}
             onChange={e => onChange(e)}
@@ -184,7 +179,7 @@ const EditProfile = ({
           <small className="form-text">Tell us a little about yourself</small>
         </div>
 
-        <div className="my-2">
+        {/* <div className="my-2">
           <button
             onClick={() => toggleSocialInputs(!displaySocialInputs)}
             type="button"
@@ -195,7 +190,6 @@ const EditProfile = ({
           <span>Optional</span>
         </div>
 
-        {/* If you click social media button it shows the following divs in the fragment */}
         {displaySocialInputs && (
           <Fragment>
             <div className="form-group social-input">
@@ -253,7 +247,7 @@ const EditProfile = ({
               />
             </div>
           </Fragment>
-        )}
+        )} */}
 
         <input type="submit" className="btn btn-primary my-1" />
         <Link className="btn btn-light my-1" to="/dashboard">
