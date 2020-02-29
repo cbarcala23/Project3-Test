@@ -79,13 +79,13 @@ router.post(
       profileFields.hobbies = hobbies
         .toString()
         .split(",")
-        .map(skill => skill.trim());
+        .map(hobby => hobby.trim());
     };
     if (languages) {
       profileFields.languages = languages
         .toString()
         .split(",")
-        .map(skill => skill.trim());
+        .map(language => language.trim());
     }
 
     // Build social object
