@@ -5,10 +5,10 @@ import PropTypes from "prop-types";
 const ProfileItem = ({
   profile: {
     user: { _id, name, avatar },
-    status,
-    company,
+    gender,
+    languages,
     location,
-    skills
+    hobbies
   }
 }) => {
   return (
@@ -17,7 +17,7 @@ const ProfileItem = ({
       <div>
         <h2>{name}</h2>
         <p>
-          {status} {company && <span> at {company}</span>}
+          {gender} {languages && <span> at {languages}</span>}
         </p>
         <p className="my-1">{location && <span>{location}</span>}</p>
         <Link to={`/profile/${_id}`} className="btn btn-primary">
@@ -25,9 +25,9 @@ const ProfileItem = ({
         </Link>
       </div>
       <ul>
-          {skills.slice(0, 4).map((skill, index) => (
+          {hobbies.slice(0, 4).map((hobby, index) => (
               <li key={index} className="text-primary">
-                  <i className="fas fa-check"></i>{skill}
+                  <i className="fas fa-check"></i>{hobby}
               </li>
           ))}
       </ul>
