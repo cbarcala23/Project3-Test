@@ -7,12 +7,12 @@ import { createProfile } from "../../actions/profile";
 
 const CreateProfile = ({ createProfile, history }) => {
   const [formData, setFormData] = useState({
-    company: "",
-    website: "",
+    languages: "",
+    hometown: "",
     location: "",
-    status: "",
-    skills: "",
-    githubusername: "",
+    gender: "",
+    hobbies: "",
+    // githubusername: "",
     bio: "",
     twitter: "",
     facebook: "",
@@ -25,12 +25,12 @@ const CreateProfile = ({ createProfile, history }) => {
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
 
   const {
-    company,
-    website,
+    languages,
+    hometown,
     location,
-    status,
-    skills,
-    githubusername,
+    gender,
+    hobbies,
+    // githubusername,
     bio,
     twitter,
     facebook,
@@ -54,46 +54,41 @@ const CreateProfile = ({ createProfile, history }) => {
         <i className="fas fa-user"></i> Let's get some information to make your
         profile stand out
       </p>
-      <small>* = required field</small>
+      <small><h2 className="text-primary">* = required field</h2></small>
       <form className="form" onSubmit={e => onSubmit(e)}>
         <div className="form-group">
-          <select name="status" value={status} onChange={e => onChange(e)}>
-            <option value="0">* Select Professional Status</option>
-            <option value="Developer">Developer</option>
-            <option value="Junior Developer">Junior Developer</option>
-            <option value="Senior Developer">Senior Developer</option>
-            <option value="Manager">Manager</option>
-            <option value="Student or Learning">Student or Learning</option>
-            <option value="Instructor">Instructor or Teacher</option>
-            <option value="Intern">Intern</option>
+          <select name="gender" value={gender} onChange={e => onChange(e)}>
+            <option value="0">Select Gender</option>
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
             <option value="Other">Other</option>
           </select>
           <small className="form-text">
-            Give us an idea of where you are at in your career
+            Unicorns and snowflakes welcome
           </small>
         </div>
         <div className="form-group">
           <input
             type="text"
-            placeholder="Company"
-            name="company"
-            value={company}
+            placeholder="Languages"
+            name="languages"
+            value={languages}
             onChange={e => onChange(e)}
           />
           <small className="form-text">
-            Could be your own company or one you work for
+          Please use comma separated values (eg. English,Korean,Spanish)
           </small>
         </div>
         <div className="form-group">
           <input
             type="text"
-            placeholder="Website"
-            name="website"
-            value={website}
+            placeholder="Hometown"
+            name="hometown"
+            value={hometown}
             onChange={e => onChange(e)}
           />
           <small className="form-text">
-            Could be your own or a company website
+          City & state suggested (eg. Boston, MA)
           </small>
         </div>
         <div className="form-group">
@@ -105,22 +100,22 @@ const CreateProfile = ({ createProfile, history }) => {
             onChange={e => onChange(e)}
           />
           <small className="form-text">
-            City & state suggested (eg. Boston, MA)
+            Eg. Capitol Hill
           </small>
         </div>
         <div className="form-group">
           <input
             type="text"
-            placeholder="* Skills"
-            name="skills"
-            value={skills}
+            placeholder="* Hobbies"
+            name="hobbies"
+            value={hobbies}
             onChange={e => onChange(e)}
           />
           <small className="form-text">
-            Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)
+            Please use comma separated values (eg. Hiking,Swimming,Sleeping,Eating)
           </small>
         </div>
-        <div className="form-group">
+        {/* <div className="form-group">
           <input
             type="text"
             placeholder="Github Username"
@@ -132,10 +127,10 @@ const CreateProfile = ({ createProfile, history }) => {
             If you want your latest repos and a Github link, include your
             username
           </small>
-        </div>
+        </div> */}
         <div className="form-group">
           <textarea
-            placeholder="A short bio of yourself"
+            placeholder="* A short bio of yourself"
             name="bio"
             value={bio}
             onChange={e => onChange(e)}
@@ -143,7 +138,7 @@ const CreateProfile = ({ createProfile, history }) => {
           <small className="form-text">Tell us a little about yourself</small>
         </div>
 
-        <div className="my-2">
+        {/* <div className="my-2">
           <button
             onClick={() => toggleSocialInputs(!displaySocialInputs)}
             type="button"
@@ -154,7 +149,6 @@ const CreateProfile = ({ createProfile, history }) => {
           <span>Optional</span>
         </div>
 
-        {/* If you click social media button it shows the following divs in the fragment */}
         {displaySocialInputs && (
           <Fragment>
             <div className="form-group social-input">
@@ -211,8 +205,8 @@ const CreateProfile = ({ createProfile, history }) => {
                 onChange={e => onChange(e)}
               />
             </div>
-          </Fragment>
-        )}
+          </Fragment> )}*/}
+        
 
         <input type="submit" className="btn btn-primary my-1" />
         <Link className="btn btn-light my-1" to="/dashboard">

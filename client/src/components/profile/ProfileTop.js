@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 
 const ProfileTop = ({
   profile: {
-    status,
-    company,
+    gender,
+    languages,
     location,
-    website,
+    hometown,
     social,
-    skills,
+    hobbies,
     user: { name, avatar }
   }
 }) => {
@@ -17,7 +17,7 @@ const ProfileTop = ({
       <img class="round-img my-1" src={avatar} alt="" />
       <h1 class="large">{name}</h1>
       <p class="lead">
-        {status} {company && <span> at {company}</span>}
+        {gender} {languages && <span> at {languages}</span>}
       </p>
       <p>{location && <span>{location}</span>}</p>
       {/* <div class="icons my-1">
