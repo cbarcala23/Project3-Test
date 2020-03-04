@@ -1,5 +1,4 @@
-// import axios from "axios";
-import setAuthToken from '../utils/setAuthToken';
+import axios from "axios";
 import { setAlert } from "./alert";
 
 import {
@@ -13,7 +12,6 @@ import {
 // Get current users profile
 export const getCurrentProfile = () => async dispatch => {
   try {
-    const axios = setAuthToken(localStorage.token);
     const res = await axios.get("/api/profile/me");
 
     dispatch({
@@ -32,7 +30,6 @@ export const getCurrentProfile = () => async dispatch => {
 export const getProfiles = () => async dispatch => {
   dispatch({ type: CLEAR_PROFILE });
   try {
-    const axios = setAuthToken(localStorage.token);
     const res = await axios.get("/api/profile");
 
     dispatch({
@@ -51,7 +48,6 @@ export const getProfiles = () => async dispatch => {
 export const getProfileById = userId => async dispatch => {
 
   try {
-    const axios = setAuthToken(localStorage.token);
     const res = await axios.get(`/api/profile/user/${userId}`);
 
     dispatch({
@@ -78,7 +74,7 @@ export const createProfile = (
         "Content-Type": "application/json"
       }
     };
-    const axios = setAuthToken(localStorage.token);
+
     const res = await axios.post("/api/profile", formData, config);
 
     dispatch({
@@ -144,7 +140,6 @@ export const createProfile = (
 export const deleteAccount = () => async dispatch => {
   if (window.confirm("Are you sure? This can NOT be undone.")) {
     try {
-      const axios = setAuthToken(localStorage.token);
       await axios.delete("/api/profile");
 
       dispatch({
