@@ -10,9 +10,9 @@ export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       <li>
         <Link to="/map">Browse Locations</Link>
       </li>
-      <li>
+      {/* <li>
         <Link to="/profiles">Browse CheckIN Users</Link>
-      </li>
+      </li> */}
       <li>
         <Link to="/dashboard">
           <i className="fas fa-sign-out-alt" />{" "}
@@ -33,9 +33,9 @@ export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       <li>
         <Link to="/map">Browse Locations</Link>
       </li>
-      <li>
+      {/* <li>
         <Link to="/profiles">Browse CheckIN Users</Link>
-      </li>
+      </li> */}
       <li>
         <Link to="/register">Signup</Link>
       </li>
