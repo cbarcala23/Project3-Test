@@ -3,6 +3,8 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
+import Slider from "../Slider";
+
 // Prevents you to go back to Landing page if logged in
 const Landing = ({ isAuthenticated }) => {
   if (isAuthenticated) {
@@ -31,6 +33,7 @@ const Landing = ({ isAuthenticated }) => {
               Login
             </Link>
           </div>
+          <Slider />
         </div>
       </div>
     </section>
