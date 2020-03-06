@@ -12,13 +12,15 @@ import Profiles from "./components/profiles/Profiles";
 import Profile from "./components/profile/Profile";
 import Map from "./components/Map";
 import PrivateRoute from "./components/routing/PrivateRoute";
+
 // Redux
 import { Provider } from "react-redux";
 import store from "./store";
 import { loadUser } from "./actions/auth";
 import setAuthToken from "./utils/setAuthToken";
-
-import "./App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "./css/app.css";
+// import "./App.css";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);

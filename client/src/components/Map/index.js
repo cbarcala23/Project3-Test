@@ -176,9 +176,7 @@ class Map extends Component {
     return (
       <main>
         <header>
-          <Container>
-            <Row className="flexbox-container">
-              <Col sm={8}>
+          <Container className="mx-auto text-center">
                 <h2>Find types of venue</h2>
                 ex: bars, coffee shops, etc
                 <p></p>
@@ -187,20 +185,19 @@ class Map extends Component {
                 <button className="btn-primary p-1" onClick={this.getVenues}>Search</button>
                 {/* <p>Your Latitude: {this.state.latitude}</p>
                 <p>Your Longitude: {this.state.longitude}</p> */}
-              </Col>
-              <Col sm={2}>
+
                 <div id="venue"></div>
-              </Col>
-            </Row>
-            <Row className="flexbox-container">
-              <div id="test">
-                <Profiles />
-              </div>
-            </Row>
           </Container>
         </header>
 
         <div id="map"></div>
+        <Container className="mt-3 mx-auto text-center">
+          <Row className="flexbox-container">
+            <div id="test">
+              <Profiles />
+            </div>
+          </Row>
+        </Container>
       </main>
     );
   }
