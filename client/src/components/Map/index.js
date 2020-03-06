@@ -184,7 +184,7 @@ class Map extends Component {
                 <p></p>
                 <input type="text" onChange={this.handle.bind(this)} />
                 <p></p>
-                <button onClick={this.getVenues}>Search</button>
+                <button className="btn-primary p-1" onClick={this.getVenues}>Search</button>
                 {/* <p>Your Latitude: {this.state.latitude}</p>
                 <p>Your Longitude: {this.state.longitude}</p> */}
               </Col>

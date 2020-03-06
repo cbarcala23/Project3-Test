@@ -58,48 +58,48 @@ const CreateProfile = ({ createProfile, history }) => {
       <form className="form" onSubmit={e => onSubmit(e)}>
         <div className="form-group">
           <select name="status" value={status} onChange={e => onChange(e)}>
-            <option value="0">* Select Professional Status</option>
-            <option value="Developer">Developer</option>
-            <option value="Junior Developer">Junior Developer</option>
-            <option value="Senior Developer">Senior Developer</option>
-            <option value="Manager">Manager</option>
+            <option value="0">* Select Gender</option>
+            <option value="Developer">Female</option>
+            <option value="Junior Developer">Male</option>
+            <option value="Senior Developer">Other</option>
+            {/* <option value="Manager">Manager</option>
             <option value="Student or Learning">Student or Learning</option>
             <option value="Instructor">Instructor or Teacher</option>
             <option value="Intern">Intern</option>
-            <option value="Other">Other</option>
+            <option value="Other">Other</option> */}
           </select>
           <small className="form-text">
-            Give us an idea of where you are at in your career
+            Unicorns and snowflakes welcome!
           </small>
         </div>
         <div className="form-group">
           <input
             type="text"
-            placeholder="Company"
+            placeholder="Education"
             name="company"
             value={company}
             onChange={e => onChange(e)}
           />
           <small className="form-text">
-            Could be your own company or one you work for
+            What is your education level?
           </small>
         </div>
         <div className="form-group">
           <input
             type="text"
-            placeholder="Website"
+            placeholder="Pets"
             name="website"
             value={website}
             onChange={e => onChange(e)}
           />
           <small className="form-text">
-            Could be your own or a company website
+            Do you have any pets? (If so, what kind?)
           </small>
         </div>
         <div className="form-group">
           <input
             type="text"
-            placeholder="Location"
+            placeholder="Hometown"
             name="location"
             value={location}
             onChange={e => onChange(e)}
@@ -111,26 +111,25 @@ const CreateProfile = ({ createProfile, history }) => {
         <div className="form-group">
           <input
             type="text"
-            placeholder="* Skills"
+            placeholder="* Hobbies"
             name="skills"
             value={skills}
             onChange={e => onChange(e)}
           />
           <small className="form-text">
-            Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)
+            Please use comma separated values (eg. Biking, Hiking, Sleeping, Eating)
           </small>
         </div>
         <div className="form-group">
           <input
             type="text"
-            placeholder="Github Username"
+            placeholder="Favorite food"
             name="githubusername"
             value={githubusername}
             onChange={e => onChange(e)}
           />
           <small className="form-text">
-            If you want your latest repos and a Github link, include your
-            username
+            What is your favorite food?
           </small>
         </div>
         <div className="form-group">
@@ -143,7 +142,7 @@ const CreateProfile = ({ createProfile, history }) => {
           <small className="form-text">Tell us a little about yourself</small>
         </div>
 
-        <div className="my-2">
+        {/* <div className="my-2">
           <button
             onClick={() => toggleSocialInputs(!displaySocialInputs)}
             type="button"
@@ -154,7 +153,6 @@ const CreateProfile = ({ createProfile, history }) => {
           <span>Optional</span>
         </div>
 
-        {/* If you click social media button it shows the following divs in the fragment */}
         {displaySocialInputs && (
           <Fragment>
             <div className="form-group social-input">
@@ -212,7 +210,7 @@ const CreateProfile = ({ createProfile, history }) => {
               />
             </div>
           </Fragment>
-        )}
+        )} */}
 
         <input type="submit" className="btn btn-primary my-1" />
         <Link className="btn btn-light my-1" to="/dashboard">
