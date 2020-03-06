@@ -10,6 +10,11 @@
     line-height: 1.2;
     margin-bottom: 1rem;
   }
+
+  .bold {
+    font-weight: bold;
+    color: #17a2b8;
+  }
   
   .lead {
     font-size: 1.5rem;

@@ -30,11 +30,12 @@ const Login = ({ login, isAuthenticated }) => {
       <section className="container">
         <h1 className="large text-primary">Sign In</h1>
         <p className="lead">
-          <i className="fas fa-user"></i> Sign In and CheckIN!
+        Sign In and CheckIN!
         </p>
         <form className="form" onSubmit={e => onSubmit(e)}>
           <div className="form-group">
             <input
+              className="form-control"
               type="email"
               placeholder="Email Address"
               name="email"
@@ -44,6 +45,7 @@ const Login = ({ login, isAuthenticated }) => {
           </div>
           <div className="form-group">
             <input
+              className="form-control"
               type="password"
               placeholder="Password"
               name="password"

@@ -16,7 +16,7 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
         <Spinner />
       ) : (
         <Fragment>
-          <h1 className="">Browse CheckedIN Users</h1>
+      
           {/* <p className="lead">
             <i className="fab fa-connectdevelop"></i> Browse and connect with
             Users
