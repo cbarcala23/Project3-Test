@@ -58,9 +58,9 @@ const EditProfile = ({
       for (const key in profile) {
         if (key in profileData) profileData[key] = profile[key];
       }
-      for (const key in profile.social) {
-        if (key in profileData) profileData[key] = profile.social[key];
-      }
+      // for (const key in profile.social) {
+      //   if (key in profileData) profileData[key] = profile.social[key];
+      // }
       setFormData(profileData);
     }
   }, [loading, getCurrentProfile, profile]);
@@ -90,19 +90,19 @@ const EditProfile = ({
 
   return (
     <Fragment>
-      <h1 className="large text-primary">Create Your Profile</h1>
+      <h1 className="">Edit Your Profile</h1>
       <p className="lead">
-        <i className="fas fa-user"></i> Let's get some information to make your
+        Let's get some information to make your
         profile stand out
       </p>
       <small>* = required field</small>
-      <form className="form" onSubmit={e => onSubmit(e)}>
+      <form className="form p-1 pb-4" onSubmit={e => onSubmit(e)}>
         <div className="form-group">
-          <select name="status" value={status} onChange={e => onChange(e)}>
+          <select className="form-control" name="status" value={status} onChange={e => onChange(e)}>
             <option value="0">* Select Gender</option>
-            <option value="Developer">Female</option>
-            <option value="Junior Developer">Male</option>
-            <option value="Senior Developer">Other</option>
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+            <option value="Other">Other</option>
             {/* <option value="Manager">Manager</option>
             <option value="Student or Learning">Student or Learning</option>
             <option value="Instructor">Instructor or Teacher</option>
@@ -115,6 +115,7 @@ const EditProfile = ({
         </div>
         <div className="form-group">
           <input
+            className="form-control"
             type="text"
             placeholder="Education"
             name="company"
@@ -127,6 +128,7 @@ const EditProfile = ({
         </div>
         <div className="form-group">
           <input
+            className="form-control"
             type="text"
             placeholder="Pets"
             name="website"
@@ -139,6 +141,7 @@ const EditProfile = ({
         </div>
         <div className="form-group">
           <input
+            className="form-control"
             type="text"
             placeholder="Hometown"
             name="location"
@@ -151,6 +154,7 @@ const EditProfile = ({
         </div>
         <div className="form-group">
           <input
+            className="form-control"
             type="text"
             placeholder="* Hobbies"
             name="skills"
@@ -163,6 +167,7 @@ const EditProfile = ({
         </div>
         <div className="form-group">
           <input
+            className="form-control"
             type="text"
             placeholder="Favorite food"
             name="githubusername"
@@ -175,6 +180,7 @@ const EditProfile = ({
         </div>
         <div className="form-group">
           <textarea
+            className="form-control"
             placeholder="A short bio of yourself"
             name="bio"
             value={bio}

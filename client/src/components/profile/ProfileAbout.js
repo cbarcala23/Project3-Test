@@ -6,6 +6,7 @@ const ProfileAbout = ({
     bio,
     status,
     company,
+    location,
     skills,
     user: { name }
   }
@@ -14,10 +15,10 @@ const ProfileAbout = ({
     <div class="profile-about bg-light p-2">
       {bio && (
         <Fragment>
-          <h2 class="text-primary">{name}'s Bio</h2>
-          <p>{bio}</p>
+          <h2 class="text-primary">Bio</h2>
+          <p className="mb-2">{bio}</p>
           <p>I identify as {status}</p>
-          <p>I am originally from {company}</p>
+          <p>I am originally from {location}</p>
         </Fragment>
       )}
 
