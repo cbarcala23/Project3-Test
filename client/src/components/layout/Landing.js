@@ -13,9 +13,9 @@ import Marker from "../../img/icons/icons/marker.png";
 
 // Prevents you to go back to Landing page if logged in
 const Landing = ({ isAuthenticated }) => {
-  if (isAuthenticated) {
-    return <Redirect to="/dashboard" />;
-  }
+  // if (isAuthenticated) {
+  //   return <Redirect to="/dashboard" />;
+  // }
 
   return (
     <section className="landing">
