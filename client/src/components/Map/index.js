@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Fragment, Component } from "react";
 import ReactDOM from "react-dom";
 import "./style.css";
 import axios from "axios";
@@ -15,7 +15,11 @@ class Map extends Component {
       latitude: 47.5123737,
       longitude: -122.384732,
       userAddress: null,
-      input: ""
+      input: "",
+      name: "",
+      address: "",
+      venuetype: "",
+      flag: false
     };
     this.getLocation = this.getLocation.bind(this);
     this.getCoordinates = this.getCoordinates.bind(this);
@@ -145,20 +149,29 @@ class Map extends Component {
       });
 
       //Click on Marker
-      marker.addListener("click", function() {
+      marker.addListener("click", () => {
         //Change the content
         infowindow.setContent(contentString);
         //Open an Info Window
-        infowindow.open(map, marker);
+        // infowindow.open(map, marker);
         //Render to page location id venue
         console.log("test");
-        const element = (
-          <div>
-            <h1>{myVenue.venue.name}</h1>
-            <p>{myVenue.venue.location.address}</p>
-          </div>
-        );
-        ReactDOM.render(element, document.getElementById("venue"));
+        this.setState({
+          venueid: myVenue.venue.id,
+          name: myVenue.venue.name,
+          address: myVenue.venue.location.address,
+          venuetype: myVenue.venue.categories[0].name
+        });
+        this.renderVenueIN();
+        // const element = (
+        //   <div className="bg-info" id="renderedinfo">
+        //     <h1>{myVenue.venue.name}</h1>
+        //     <p>{myVenue.venue.location.address}</p>
+        //     <p>Type of Venue: {myVenue.venue.categories[0].name}</p>
+        //     <button className="btn btn-dark" onClick={this.checkin}>CheckIN</button>
+        //   </div>
+        // );
+        // ReactDOM.render(element, document.getElementById("venue"));
       });
     });
   };
@@ -169,6 +182,49 @@ class Map extends Component {
       input: event.target.value
     });
     console.log(event.target.value);
+  };
+
+  renderVenueOUT = () => {
+    console.log("checked in!");
+    this.setState({
+      flag: true
+    });
+    const element = (
+      <div className="bg-info" id="renderedinfo">
+        <h1>{this.state.name}</h1>
+        <p>{this.state.address}</p>
+        <p>Type of Venue: {this.state.venuetype}</p>
+        <button className="btn btn-dark" onClick={this.renderVenueIN}>CheckOUT</button>
+      </div>
+    );
+    ReactDOM.render(element, document.getElementById("venue"));
+  };
+
+  renderVenueIN = () => {
+    this.setState({
+      flag: false
+    });
+    const element = (
+      <div className="bg-info" id="renderedinfo">
+        <h1>{this.state.name}</h1>
+        <p>{this.state.address}</p>
+        <p>Type of Venue: {this.state.venuetype}</p>
+        {/* <button className="btn btn-light" onClick={this.renderVenueOUT}>CheckIN</button> */}
+        <button className="btn btn-light" onClick={() => {
+          this.renderVenueOUT();
+          this.bookmark();
+        }}>CheckIN</button>
+        {/* <button className="btn btn-light" onClick="window.location.href = '#bookmark1';">CheckIN</button> */}
+        
+      </div>
+    );
+    ReactDOM.render(element, document.getElementById("venue"));
+    console.log("rendered");
+  };
+
+  //Go to bookmark
+  bookmark = () => {
+    window.location.href = '#bookmark1';
   }
 
   //Render the map onto the div map
@@ -182,7 +238,7 @@ class Map extends Component {
                 <p></p>
                 <input type="text" onChange={this.handle.bind(this)} />
                 <p></p>
-                <button className="btn btn-primary" onClick={this.getVenues}>Search</button>
+                <button className="btn btn-danger" onClick={this.getVenues}>Search</button>
                 {/* <p>Your Latitude: {this.state.latitude}</p>
                 <p>Your Longitude: {this.state.longitude}</p> */}
 
@@ -192,10 +248,12 @@ class Map extends Component {
 
         <div id="map"></div>
         <Container className="mt-3 mx-auto text-center">
-        <h1 className="">Browse CheckedIN Users</h1>
+        <h1 className="" id="bookmark1">Browse CheckedIN Users</h1>
           <Row className="flexbox-container">
             <div id="test">
-              <Profiles />
+                {this.state.flag ? (<Profiles />) : (<Fragment />)}
+
+
             </div>
           </Row>
         </Container>
