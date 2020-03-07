@@ -12,10 +12,10 @@ const ProfileAbout = ({
   }
 }) => {
   return (
-    <div class="profile-about bg-light p-2">
+    <div class="profile-about profile-bg p-2">
       {bio && (
         <Fragment>
-          <h2 class="text-primary">Bio</h2>
+          <h2 class="large">Bio</h2>
           <p className="mb-2">{bio}</p>
           <p>I identify as {status}</p>
           <p>I am originally from {location}</p>
@@ -23,7 +23,7 @@ const ProfileAbout = ({
       )}
 
       <div class="line"></div>
-      <h2 class="text-primary">Hobbies</h2>
+      <h2 class="large">Hobbies</h2>
       <div class="skills">
         {skills.map((skill, index) => (
           <div key={index} className="p-1">
