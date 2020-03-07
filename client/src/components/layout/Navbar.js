@@ -32,6 +32,7 @@ export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <ul>
       <li>
         <Link to="/map" className="nav-item nav-link text-dark">Map</Link>
+
       </li>
       {/* <li>
         <Link to="/profiles">Browse CheckIN Users</Link>

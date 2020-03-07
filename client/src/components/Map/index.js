@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import "./style.css";
 import axios from "axios";
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Profiles from "../profiles/Profiles";
 
@@ -14,6 +13,8 @@ class Map extends Component {
       venues: [],
       latitude: 47.5123737,
       longitude: -122.384732,
+      // latitude: "",
+      // longitude: "",
       userAddress: null,
       input: "",
       name: "",
@@ -28,7 +29,9 @@ class Map extends Component {
   //If Component mounts then get Venues and get User Location (coordinates)
   componentDidMount() {
     this.getLocation();
+    // this.renderMap();
     this.getVenues();
+
   }
 
   componentDidUpdate() {
@@ -123,7 +126,7 @@ class Map extends Component {
     var map = new window.google.maps.Map(document.getElementById("map"), {
       center: { lat: this.state.latitude, lng: this.state.longitude },
       // center: { lat: 45.5123727, lng: -121.384749 },
-      zoom: 16
+      zoom: 15
     });
 
     //Creating an Infowindow
@@ -182,7 +185,7 @@ class Map extends Component {
       input: event.target.value
     });
     console.log(event.target.value);
-  };
+  }
 
   renderVenueOUT = () => {
     console.log("checked in!");
@@ -194,7 +197,10 @@ class Map extends Component {
         <h1>{this.state.name}</h1>
         <p>{this.state.address}</p>
         <p>Type of Venue: {this.state.venuetype}</p>
-        <button className="btn btn-dark" onClick={this.renderVenueIN}>CheckOUT</button>
+        <p>(Clicking CheckOUT will remove you from the users Checked IN.)</p>
+        <button className="btn btn-dark" onClick={this.renderVenueIN}>
+          CheckOUT
+        </button>
       </div>
     );
     ReactDOM.render(element, document.getElementById("venue"));
@@ -215,7 +221,6 @@ class Map extends Component {
           this.bookmark();
         }}>CheckIN</button>
         {/* <button className="btn btn-light" onClick="window.location.href = '#bookmark1';">CheckIN</button> */}
-        
       </div>
     );
     ReactDOM.render(element, document.getElementById("venue"));
@@ -224,8 +229,8 @@ class Map extends Component {
 
   //Go to bookmark
   bookmark = () => {
-    window.location.href = '#bookmark1';
-  }
+    window.location.href = "#bookmark1";
+  };
 
   //Render the map onto the div map
   render() {
@@ -241,20 +246,17 @@ class Map extends Component {
                 <button className="btn btn-primary" onClick={this.getVenues}>Search</button>
                 {/* <p>Your Latitude: {this.state.latitude}</p>
                 <p>Your Longitude: {this.state.longitude}</p> */}
-
-                <div id="venue"></div>
+            <div id="venue"></div>
           </Container>
         </header>
 
         <div id="map"></div>
         <Container className="mt-3 mx-auto text-center">
-        <h1 className="" id="bookmark1">Browse CheckedIN Users</h1>
+          <h1 className="" id="bookmark1">
+            <h5>Anyone Checked IN that venue will appear below</h5>
+          </h1>
           <Row className="flexbox-container">
-            <div id="test">
-                {this.state.flag ? (<Profiles />) : (<Fragment />)}
-
-
-            </div>
+            <div id="test">{this.state.flag ? <Profiles /> : <Fragment />}</div>
           </Row>
         </Container>
       </main>
