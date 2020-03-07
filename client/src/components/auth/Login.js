@@ -28,9 +28,11 @@ const Login = ({ login, isAuthenticated }) => {
   return (
     <Fragment>
       <section className="container">
+
         <h1 className="large">SIGN IN</h1>
         <p className="lead">
         Sign in now to checkIN
+
         </p>
         <form className="form" onSubmit={e => onSubmit(e)}>
           <div className="form-group">
