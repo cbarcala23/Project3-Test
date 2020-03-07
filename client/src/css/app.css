@@ -12,11 +12,12 @@
 
 /* Global Styles */
 :root {
-  --primary-color: #17a2b8;
+  --primary-color: #a3b2ff;
   --dark-color: #343a40;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
   --success-color: #28a745;
+  height: 100%;
 }
 
 * {
@@ -33,7 +34,10 @@ body {
   line-height: 1.6;
   background: #DBDCEB;
   color: #333;
-background: linear-gradient(0deg, rgba(246,232,255,1) 0%, rgba(123,45,253,1) 100%) no-repeat cover;
+  background: linear-gradient( #c0cafc, #afcfec, #bdece5);
+  height: 100%;
+  background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 a {

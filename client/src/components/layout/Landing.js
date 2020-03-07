@@ -19,40 +19,35 @@ const Landing = ({ isAuthenticated }) => {
 
   return (
     <section className="landing">
-      <div className="dark-overlay">
-
-        <div className="landing-inner">
-          <Slider />
-          <div className="line">
-          <h1 className="x-large">
+      <div className="container-fluid m-5">
+        {/* <div className="landing-inner"> */}
+          <h1 className="x-large text-center">
             <i className="fas fa-check-double"></i> CheckIN
           </h1>
           <br />
           <br />
-          <h1 className="large">Live Life Spontaneously, Check In!</h1>
-          <p className="lead">
+          <h1 className="text-light">Live Life Spontaneously, Check In!</h1>
+          <p className="text-dark">
             Whether it's at a Happy Hour, Coffee Shop, Lounge, or even a Museum,
             find people that you share interests with and meet them
             instantaneously!
           </p>
-
-          <div className="buttons">
-            <Link to="/register" className="btn btn-primary">
-              Sign Up
-            </Link>
-            <Link to="/login" className="btn btn-light">
-              Login
-            </Link>
           </div>
+        {/* </div> */}
+        <Slider />
 
-        </div>        
       
-
-        <div className="icons row">
-          <img className="icon" src={Login} alt="login" />
-          <img className="icon" src={Checkin} alt="checkin" />
-          <img className="icon" src={Many} alt="many" />
-          <img className="icon" src={Marker} alt="marker" />
+        <div className="container-fluid">
+          <div className="icons row">
+            {/* <img className="icon" src={Login} alt="login" />
+            <img className="icon" src={Checkin} alt="checkin" />
+            <img className="icon" src={Many} alt="many" />
+            <img className="icon" src={Marker} alt="marker" /> */}
+            <i class="fas fa-user-plus icon"></i>
+            <i class="fas fa-check-double icon"></i>
+            <i class="fas fa-users icon"></i>
+            <i class="fas fa-map-marker icon"></i>
+          </div>
         </div>
 
         <div className="footer">
@@ -77,9 +72,7 @@ const Landing = ({ isAuthenticated }) => {
             scrambled it to make a type specimen book.
           </p>
           </div>
-</div>
-          </div>
-    </section>
+        </section>
   );
 };
 
