@@ -14,6 +14,8 @@
     padding: 1rem;
     line-height: 1.8;
     margin-bottom: 1rem;
+    border: 0 solid #fff;
+    border-radius: 10px;
     /* width: 400px; */
   }
   
@@ -91,7 +93,7 @@
   .profile-edu > div {
     margin-bottom: 1rem;
     padding-bottom: 1rem;
-    border-bottom: #ccc 1px dotted;
+    /* border-bottom: #ccc 1px dotted; */
   }
   
   .profile-exp > div:last-child,

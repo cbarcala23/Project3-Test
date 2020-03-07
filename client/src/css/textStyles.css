@@ -12,9 +12,13 @@
     color: #a3b2ff;
   }
 
+  .huge {
+    color: rgba(#ffffff, 0.5);
+  }
+
   .bold {
     font-weight: bold;
-    color: #17a2b8;
+    color: #a3b2ff;
   }
   
   .lead {

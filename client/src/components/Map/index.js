@@ -164,7 +164,7 @@ class Map extends Component {
         });
         this.renderVenueIN();
         // const element = (
-        //   <div className="bg-info" id="renderedinfo">
+        //   <div className="venue-bg" id="renderedinfo">
         //     <h1>{myVenue.venue.name}</h1>
         //     <p>{myVenue.venue.location.address}</p>
         //     <p>Type of Venue: {myVenue.venue.categories[0].name}</p>
@@ -190,7 +190,7 @@ class Map extends Component {
       flag: true
     });
     const element = (
-      <div className="bg-info" id="renderedinfo">
+      <div className="venue-bg" id="renderedinfo">
         <h1>{this.state.name}</h1>
         <p>{this.state.address}</p>
         <p>Type of Venue: {this.state.venuetype}</p>
@@ -205,12 +205,12 @@ class Map extends Component {
       flag: false
     });
     const element = (
-      <div className="bg-info" id="renderedinfo">
+      <div className="venue-bg" id="renderedinfo">
         <h1>{this.state.name}</h1>
         <p>{this.state.address}</p>
         <p>Type of Venue: {this.state.venuetype}</p>
         {/* <button className="btn btn-light" onClick={this.renderVenueOUT}>CheckIN</button> */}
-        <button className="btn btn-light" onClick={() => {
+        <button className="btn btn-primary" onClick={() => {
           this.renderVenueOUT();
           this.bookmark();
         }}>CheckIN</button>
@@ -236,9 +236,9 @@ class Map extends Component {
                 <h2>Find types of venue</h2>
                 ex: bars, coffee shops, etc
                 <p></p>
-                <input type="text" onChange={this.handle.bind(this)} />
+                <input type="text" onChange={this.handle.bind(this)} className="form-control"/>
                 <p></p>
-                <button className="btn btn-danger" onClick={this.getVenues}>Search</button>
+                <button className="btn btn-primary" onClick={this.getVenues}>Search</button>
                 {/* <p>Your Latitude: {this.state.latitude}</p>
                 <p>Your Longitude: {this.state.longitude}</p> */}
 

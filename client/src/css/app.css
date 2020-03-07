@@ -59,11 +59,15 @@ img {
   margin: auto;
   overflow: hidden;
   padding: 0 2rem;
-  margin-top: 6rem;
+  margin-top: 3rem;
   margin-bottom: 3rem;
   background-color: white;
   border: 1px solid white;
   border-radius: 10px;
+}
+
+.container-fluid {
+  width: 80%;
 }
 
 ::-webkit-scrollbar {
@@ -77,10 +81,23 @@ img {
   box-shadow: 0 0 1px rgba(255, 255, 255, .5);
 }
 
+.venue-bg {
+  background: #7a90ff;
+  border-radius: 10px;
+}
 
+.profile-bg {
+  background: #f4f4f4;
+  border-radius: 10px;
+}
 
+.profileTop-bg {
+  background: #c0cafc;
+  border-radius: 10px;
+}
 
-
-
+.fa-star {
+  color: #c0cafc;
+}
 
 

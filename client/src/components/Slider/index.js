@@ -4,20 +4,15 @@ import "slick-carousel/slick/slick-theme.css";
 import styled from "styled-components";
 import "./Slide.css";
 import Slider from "react-slick";
-import pic1 from "./pics/pic1.png";
-import pic2 from "./pics/pic2.png";
-import pic3 from "./pics/pic3.png";
-import pic4 from "./pics/pic4.png";
-import pic5 from "./pics/pic5.png";
+import pic1 from "./pics/pic1.jpg";
+import pic3 from "./pics/pic3.jpg";
+import pic4 from "./pics/pic4.jpg";
+import pic5 from "./pics/pic5.jpg";
 
 const pics = [
   {
     name: "pic1",
     src: pic1
-  },
-  {
-    name: "pic2",
-    src: pic2
   },
   {
     name: "pic3",
@@ -38,7 +33,7 @@ const Wrapper = styled.div`
   position: relative;
   width: 100%;
   
-height: 100vh; 
+// height: 100vh; 
   box-sizing: border-box;
 `;
 

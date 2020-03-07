@@ -19,10 +19,10 @@ const Landing = ({ isAuthenticated }) => {
 
   return (
     <section className="landing">
-      <div className="container-fluid m-5">
+      <div className="container-fluid mb-5">
         {/* <div className="landing-inner"> */}
           <h1 className="x-large text-center">
-            <i className="fas fa-check-double"></i> CheckIN
+            <p className="huge">CheckIN</p>
           </h1>
           <br />
           <br />
@@ -37,41 +37,55 @@ const Landing = ({ isAuthenticated }) => {
         <Slider />
 
       
-        <div className="container-fluid">
+        {/* <div className="container-fluid">
           <div className="icons row">
-            {/* <img className="icon" src={Login} alt="login" />
-            <img className="icon" src={Checkin} alt="checkin" />
-            <img className="icon" src={Many} alt="many" />
-            <img className="icon" src={Marker} alt="marker" /> */}
-            <i class="fas fa-user-plus icon"></i>
+            
             <i class="fas fa-check-double icon"></i>
             <i class="fas fa-users icon"></i>
             <i class="fas fa-map-marker icon"></i>
           </div>
+        </div> */}
+
+        <div className="footer">
+          <div className="row">
+            <i className="fas fa-user-plus icon col-sm-4 pt-5"></i>
+            <p className="col-sm-8 p-3">
+              <h1 className="large">SIGN UP</h1>
+            Simply signup and login to start exploring areas around you and meet new people.
+            </p>
+          </div>
+        </div>
+
+        <div className="footer2">
+          <div className="row">
+          <i className="fas fa-map-marker icon col-sm-4 pt-5"></i>
+            <p className="col-sm-8 p-3">
+            <h1 className="large">LOCATE</h1>
+            Using the familiar Google Maps API, you can search for venues using keywords such as ‘food’, ‘coffee’, ‘bars’, and pull up business to view who is currently checked IN.
+            </p>
+          </div>
         </div>
 
         <div className="footer">
-          <p>
-            Lorem Ipsum has been the industry's standard dummy text ever since
-            the 1500s, when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book.
-          </p>
-          <p>
-            Lorem Ipsum has been the industry's standard dummy text ever since
-            the 1500s, when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book.
-          </p>
-          <p>
-            Lorem Ipsum has been the industry's standard dummy text ever since
-            the 1500s, when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book.
-          </p>
-          <p>
-            Lorem Ipsum has been the industry's standard dummy text ever since
-            the 1500s, when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book.
-          </p>
+          <div className="row">
+            <i className="fas fa-check-double icon col-sm-4 pt-5"></i>
+            <p className="col-sm-8 p-3">
+            <h1 className="large">CHECK IN</h1>
+            Once you have selected a venue, click on the CheckIN button to notify others already Checked In you are on your way!
+            </p>
           </div>
+        </div>
+
+        <div className="footer2">
+          <div className="row">
+          <i className="fas fa-users icon col-sm-4 pt-5"></i>
+            <p className="col-sm-8 p-3">
+            <h1 className="large">MEET</h1>
+            View other Checked In profiles and walk in ready to strike up a great conversation based on Interests.
+            </p>
+          </div>
+        </div>
+
         </section>
   );
 };

@@ -1,5 +1,6 @@
 #map {
     height: 100vh;
+    border-radius: 10px;
   }
   html, body {
     height: 100%;
