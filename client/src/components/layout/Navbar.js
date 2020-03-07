@@ -31,25 +31,25 @@ export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const guestLinks = (
     <ul>
       <li>
-        <Link to="/map">Browse Locations</Link>
+        <Link to="/map" className="nav-item nav-link text-dark">Map</Link>
       </li>
       {/* <li>
         <Link to="/profiles">Browse CheckIN Users</Link>
       </li> */}
       <li>
-        <Link to="/register">Signup</Link>
+        <Link to="/login" className="nav-item nav-link text-dark">Login</Link>
       </li>
       <li>
-        <Link to="/login">Login</Link>
+        <Link to="/register"><button className="btn btn-primary">Signup</button></Link>
       </li>
     </ul>
   );
 
   return (
-    <nav className="navbar bg-dark">
+    <nav className="navbar bg-light">
       <h1>
         <Link to="/">
-          <i className="fas fa-check-double"></i> CheckIN
+          <span className="text-dark"><i className="fas fa-check-double"></i> CheckIN</span>
         </Link>
       </h1>
       {!loading && (
